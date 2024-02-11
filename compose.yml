@@ -1,0 +1,14 @@
+services:
+  npm:
+    image: "node:20"
+    volumes:
+      - ./app1:/usr/src/app
+    working_dir: /usr/src/app
+  dev:
+    image: "node:20"
+    ports:
+      - 3001:3001
+    volumes:
+      - ./app1:/usr/src/app
+    working_dir: /usr/src/app
+    command: yarn run dev
